@@ -1,38 +1,118 @@
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  color: white;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p{
+  color: rgb(143, 143, 143);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+li{
+  list-style: none;
+  margin: 0px 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 1em;
+  background-color: rgb(36, 36, 42);
+  color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 99;
+}
+h2{
+  color: rgb(53, 52, 59);
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+  padding: 50px 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.grid .box{
+  padding: 20px;
+  border: 1px rgb(228, 228, 228) solid;
+  border-radius: 10px;
+  background-color: white;
+  transition: 0.5s ease;
+}
+
+.grid .box:hover{
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+  transition: 0.5s ease;
+}
+.grid .box img{
+  width: 100%;
+  position: relative;
+}
+
+.loading{
+  text-align: center;
+  padding-top: 60px;
+}
+
+.rotate{
+  animation: rotate 2.5s infinite linear;
+}
+
+.rotate-late{
+  animation: rotate 5.5s infinite linear;
+}
+
+.go-back{
+  color: #333;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+
+@keyframes rotate {
+    from{
+      transform: rotate(0deg);
+    }to{
+      transform: rotate(360deg);
+    }
+}
+
+
+@media screen and (max-width: 830px) {
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 545px) {
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.post .post-container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 1em;
+  border: 1px rgb(228, 228, 228) solid;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.grid .box button{
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  background-color: steelblue;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
